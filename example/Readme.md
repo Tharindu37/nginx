@@ -1,3 +1,14 @@
+```
+docker run -it -p 8080:80 ubuntu
+docker exec -it ff4acc828319 bash
+apt update && apt install nano -y
+```
+
+Start or Restart Nginx
+```
+nginx
+```
+
 index.html
 ```
 /www/data/index.html
