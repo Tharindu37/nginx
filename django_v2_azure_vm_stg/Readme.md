@@ -184,7 +184,8 @@ sudo openssl x509 -enddate -noout -in /etc/letsencrypt/live/nginx-ssl-test.duckd
 ```
 
 
-Deploy Django MVT Project on Azure Ubuntu Server
+## Deploy Django MVT Project on Azure Ubuntu Server
+
 We'll use:
 - Gunicorn as the WSGI app server
 - Nginx as the reverse proxy
@@ -265,6 +266,13 @@ Then enable and start:
 sudo systemctl daemon-reexec
 sudo systemctl start gunicorn
 sudo systemctl enable gunicorn
+sudo systemctl status gunicorn
+
+```
+```
+sudo systemctl daemon-reload
+sudo systemctl restart gunicorn
+sudo systemctl status gunicorn
 ```
 
 6. Configure Nginx
@@ -304,4 +312,35 @@ sudo certbot --nginx -d your_domain.com -d www.your_domain.com
 Your Django App Is Live!
 ```
 https://your_domain.com
+```
+
+## Upload And Downlaod File
+
+### Step-by-Step Fix: Set Proper .pem File Permissions on Windows
+Open PowerShell as Administrator
+```
+# Replace with your actual file path
+$KeyPath = "E:\Silverline IT\Silverline_Project_2024_12\bluepass_key\stgmultipass_key.pem"
+
+# Remove all inherited permissions
+icacls "$KeyPath" /inheritance:r
+
+# Remove all users
+icacls "$KeyPath" /remove "Authenticated Users" "Users" "Everyone"
+
+# Grant read-only access to the current user only
+icacls "$KeyPath" /grant:r "$($env:USERNAME):R"
+```
+Upload
+```
+scp -i ../../bluepass_key/stgmultipass_key.pem db.sqlite3 NeoBluePass@40.123.213.46:/opt/Webapp-Lemonade
+```
+Download
+```
+scp -i ../bluepass_key/prodmultipass_key-20240127.pem -r NeoBluePass@20.203.103.1:/opt/MultiPass ./MultiPass
+```
+Zip File
+```
+sudo apt install zip
+zip -r compressed_folder.zip folder_name/
 ```
