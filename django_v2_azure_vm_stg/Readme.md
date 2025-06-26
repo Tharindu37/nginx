@@ -246,6 +246,9 @@ If it works, stop it (Ctrl+C) and create a systemd service.
 ```
 sudo nano /etc/systemd/system/gunicorn.service
 ```
+```
+sudo /opt/Webapp-Lemonade/venv/bin/pip install gunicorn
+```
 Paste:
 ```
 [Unit]
@@ -273,6 +276,9 @@ sudo systemctl status gunicorn
 sudo systemctl daemon-reload
 sudo systemctl restart gunicorn
 sudo systemctl status gunicorn
+```
+```
+sudo systemctl stop gunicorn
 ```
 
 6. Configure Nginx
