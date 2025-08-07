@@ -350,3 +350,34 @@ Zip File
 sudo apt install zip
 zip -r compressed_folder.zip folder_name/
 ```
+
+
+How to fix www.bluepass.ae renewal?
+
+Run this to renew www.bluepass.ae using webroot and update renewal config:
+```
+sudo certbot certonly --webroot -w /var/www/certbot -d www.bluepass.ae
+```
+When it prompts that cert is not near expiry and asks to keep or renew, choose:
+```
+2 (Renew & replace the cert)
+```
+After successful renewal, run dry-run again:
+```
+sudo certbot renew --dry-run
+```
+
+List all installed certificates
+```
+sudo certbot certificates
+```
+
+Check renewal status
+```
+sudo certbot renew --dry-run
+```
+
+Check Certbot timer (systemd) for auto-renew
+```
+sudo systemctl status certbot.timer
+```
