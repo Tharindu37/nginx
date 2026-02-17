@@ -118,7 +118,10 @@ Open Terminal 1:
 ```bash
 celery -A MultiPass worker --loglevel=info
 ```
-
+or
+```bash
+celery -A MultiPass worker --pool=solo --loglevel=info
+```
 You should see:
 
 ```
