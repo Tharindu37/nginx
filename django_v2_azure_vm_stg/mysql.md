@@ -130,6 +130,12 @@ Make sure settings are using SQLite.
 ```bash
 python manage.py dumpdata --exclude auth.permission --exclude contenttypes > data.json
 ```
+```bash
+python manage.py dumpdata --natural-foreign --natural-primary > data.json
+```
+```bash
+python -X utf8 manage.py dumpdata --natural-foreign --natural-primary --output data.json
+```
 
 ---
 
@@ -143,6 +149,9 @@ Change `settings.py` again to MySQL.
 
 ```bash
 python manage.py loaddata data.json
+```
+```bash
+python manage.py loaddata data_fixed2.json
 ```
 
 ---
