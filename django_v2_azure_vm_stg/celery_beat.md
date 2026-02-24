@@ -30,11 +30,20 @@ Enable + start Redis:
 sudo systemctl enable redis
 sudo systemctl start redis
 ```
+or
+```
+sudo systemctl enable redis-server
+sudo systemctl start redis-server
+```
 
 Test:
 
 ```bash
 redis-cli ping
+```
+or
+```
+sudo systemctl status redis-server
 ```
 
 If working → `PONG`
