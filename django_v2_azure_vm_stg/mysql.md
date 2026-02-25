@@ -153,7 +153,9 @@ python manage.py loaddata data.json
 ```bash
 python manage.py loaddata data_fixed2.json
 ```
-
+```
+python manage.py loaddata data_fixed2.json --verbosity 3
+```
 ---
 
 # ✅ Step 7: Create Superuser (If Needed)
