@@ -136,6 +136,9 @@ python manage.py dumpdata --natural-foreign --natural-primary > data.json
 ```bash
 python -X utf8 manage.py dumpdata --natural-foreign --natural-primary --output data.json
 ```
+```
+python manage.py dumpdata --exclude django_celery_beat --natural-foreign --natural-primary --output=data.json --indent=2
+```
 
 ---
 
