@@ -279,6 +279,12 @@ sudo systemctl stop celery
 sudo systemctl stop celery-beat
 ```
 
+```
+sudo systemctl daemon-reload
+sudo systemctl restart celery
+sudo systemctl restart celery-beat
+```
+
 ---
 
 # 🎉 DONE
