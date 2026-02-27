@@ -272,6 +272,13 @@ sudo systemctl status celery
 sudo systemctl status celery-beat
 ```
 
+Stop
+
+```bash
+sudo systemctl stop celery
+sudo systemctl stop celery-beat
+```
+
 ---
 
 # 🎉 DONE
